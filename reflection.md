@@ -5,6 +5,7 @@
 **a. Initial design**
 
 - Briefly describe your initial UML design.
+    There should be a list of pets. Each pet should have an attribute like specie and name to differentiate them. Each pet will also have other attributes like feedings, walk, medications and appointments. And each of these things should have an integer for priority
 - What classes did you include, and what responsibilities did you assign to each?
 
 **b. Design changes**
