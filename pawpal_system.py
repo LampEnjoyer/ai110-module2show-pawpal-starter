@@ -1,21 +1,24 @@
 class Activity:
     def __init__(self, priority: int):
         self.priority = priority
+        self.completed = False
+
+    def mark_complete(self):
+        self.completed = True
 
 
 class Feeding(Activity):
-    def __init__(self, food_type: str, amount: float, time: str, priority: int):
+    def __init__(self, food_type: str, time: str, priority: int):
         super().__init__(priority)
         self.food_type = food_type
-        self.amount = amount
         self.time = time
 
 
 class Walk(Activity):
-    def __init__(self, distance_miles: float, duration_min: int, time: str, priority: int):
+    def __init__(self, distance_miles: float, duration: int, time: str, priority: int):
         super().__init__(priority)
         self.distance_miles = distance_miles
-        self.duration_min = duration_min
+        self.duration = duration
         self.time = time
 
 
@@ -39,22 +42,10 @@ class Pet:
     def __init__(self, name: str, species: str):
         self.name = name
         self.species = species
-        self.feedings: list[Feeding] = []
-        self.walks: list[Walk] = []
-        self.medications: list[Medication] = []
-        self.appointments: list[Appointment] = []
+        self.activities: list[Activity] = []
 
-    def add_feeding(self, feeding: Feeding):
-        self.feedings.append(feeding)
-
-    def add_walk(self, walk: Walk):
-        self.walks.append(walk)
-
-    def add_medication(self, medication: Medication):
-        self.medications.append(medication)
-
-    def add_appointment(self, appointment: Appointment):
-        self.appointments.append(appointment)
+    def add_activity(self, activity: Activity):
+        self.activities.append(activity)
 
 
 class Owner:
