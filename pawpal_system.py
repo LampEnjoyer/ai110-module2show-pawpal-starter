@@ -1,33 +1,3 @@
-class Owner:
-    def __init__(self, name: str):
-        self.name = name
-        self.petlist: list[Pet] = []
-
-    def add_pet(self, pet: Pet):
-        self.petlist.append(pet)
-
-class Pet:
-    def __init__(self, name: str, species: str):
-        self.name = name
-        self.species = species
-        self.feedings: list[Feeding] = []
-        self.walks: list[Walk] = []
-        self.medications: list[Medication] = []
-        self.appointments: list[Appointment] = []
-
-    def add_feeding(self, feeding: Feeding):
-        self.feedings.append(feeding)
-
-    def add_walk(self, walk: Walk):
-        self.walks.append(walk)
-
-    def add_medication(self, medication: Medication):
-        self.medications.append(medication)
-
-    def add_appointment(self, appointment: Appointment):
-        self.appointments.append(appointment)
-
-
 class Activity:
     def __init__(self, priority: int):
         self.priority = priority
@@ -63,3 +33,34 @@ class Appointment(Activity):
         self.vet_name = vet_name
         self.reason = reason
         self.date = date
+
+
+class Pet:
+    def __init__(self, name: str, species: str):
+        self.name = name
+        self.species = species
+        self.feedings: list[Feeding] = []
+        self.walks: list[Walk] = []
+        self.medications: list[Medication] = []
+        self.appointments: list[Appointment] = []
+
+    def add_feeding(self, feeding: Feeding):
+        self.feedings.append(feeding)
+
+    def add_walk(self, walk: Walk):
+        self.walks.append(walk)
+
+    def add_medication(self, medication: Medication):
+        self.medications.append(medication)
+
+    def add_appointment(self, appointment: Appointment):
+        self.appointments.append(appointment)
+
+
+class Owner:
+    def __init__(self, name: str):
+        self.name = name
+        self.petlist: list[Pet] = []
+
+    def add_pet(self, pet: Pet):
+        self.petlist.append(pet)
