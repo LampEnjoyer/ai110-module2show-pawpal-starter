@@ -1,4 +1,4 @@
-from pawpal_system import Owner, Pet, Feeding, Walk, Medication
+from pawpal_system import Owner, Pet, Feeding, Walk, Medication, Appointment
 
 owner = Owner("Bob")
 
