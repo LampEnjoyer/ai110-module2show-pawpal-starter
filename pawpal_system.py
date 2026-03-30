@@ -1,3 +1,11 @@
+class Owner:
+    def __init__(self, name: str):
+        self.name = name
+        self.petlist: list[Pet] = []
+
+    def add_pet(self, pet: Pet):
+        self.petlist.append(pet)
+
 class Pet:
     def __init__(self, name: str, species: str):
         self.name = name
